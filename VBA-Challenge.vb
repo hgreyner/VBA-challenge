@@ -17,7 +17,6 @@ End Sub
 Sub summarydatafinal()
 
 'Declare in memory all the variables
-Dim ws As Worksheet
 Dim ticker As String
 Dim lastRow As Long
 Dim Summary_Table_Row As Integer
@@ -37,7 +36,6 @@ Dim maxTotalVolumeTicker As Range
 Dim maxPercentChangeTicker As Range
 Dim minPercentChangeTicker As Range
 
-For Each ws In Worksheets
 
 'Name the columns headers since this values will remain constant in all worksheets
     Range("I1,P1").Value = "Ticker"
@@ -156,6 +154,4 @@ For Each ws In Worksheets
         Range("Q3").Value = Format(minPercentChange / 100, "0.00%")
         Range("P3").Value = minPercentChangeTicker.Offset(, -2)
     
-Next ws
-
 End Sub
